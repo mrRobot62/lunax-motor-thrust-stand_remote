@@ -1,0 +1,72 @@
+extends ../_bootstrap
+
+append styles
+  // Custom styles for this template
+
+block body
+  .welcome-pane
+    .container
+      .jumbotron
+          h1 Welcome to
+          h1 LunaX copter motor thrust stand
+          p This tool allows you to anlyze your copter motor thrust without disassembling the motors
+    .container
+      .row
+        .col-sm-4
+          .panel.panel-primary
+            .panel-heading 
+              h4 Introduction
+            .panel-body 
+                p With this copter motor test stand your are able to test your copter with all four assembled motors.
+                p
+                b Functionality:
+                ul
+                li ready for copters from 3" to 6" size
+                li analyze weight of your copter
+                li analyze thrust for all four motors separately
+                p
+                p Click button "Analyze" to start
+                p First step should be "Configure" your stand
+      
+        .col-sm-4
+          .panel.panel-primary
+            .panel-heading
+              h4 Run Test
+            .panel-body 
+              p Start copter test
+              .btn.btn-default
+                a(href="run", type="btn is-primary") Run
+        .col-sm-4
+          .panel.panel-primary
+            .panel-heading
+              h4 Analyze results
+            .panel-body 
+              p Start analyzing your copter
+              .btn.btn-default
+                a(href="analyze", type="btn is-primary") Analyze
+        .col-sm-4
+          .panel.panel-primary
+            .panel-heading 
+              h4 Configure your system
+            .panel-body 
+              p Configure your motor thrust stand
+              .btn.btn-default.focus
+                a(href="configChoose", type="btn is-primary") Config
+        .col-sm-4
+          .panel.panel-primary
+            .panel-heading
+              h4 Version
+            .panel-body
+              .viewer-version
+              p Stable version
+              .btn.btn-default.btn-md.btn-viewer-download(href='https://github.com/mrRobot62/LunaX_MotorThrustStand/releases/latest', role='button') Download
+    #changelog
+      .button
+        <a id="changelog_toggle" href="#">Changelog</a>
+      .wrapper
+        iframe(width='30%', frameborder='1', scrolling='yes', src='/changelog')
+
+  hr
+  footer
+    p © LunaX FPV 2019-2020
+  block content

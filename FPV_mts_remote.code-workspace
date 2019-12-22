@@ -1,0 +1,23 @@
+{
+    "settings": {
+        "sync-rsync.onSave": false,
+        "sync-rsync.onSaveIndividual": true,
+        "sync-rsync.delete": true,
+		"sync-rsync.sites": [
+			{
+				"localPath": "/Users/bernhardklein/local-workspace/Multicopter_Drones/LunaX_MotorThrust/lunax-motor-thrust-stand_remote/",
+                "remotePath": "/Volumes/Public/nodejs/lunax-motor-thrust-stand_remote/"
+			},
+        ],
+        "sync-rsync.exclude" : [
+            "node_modules",
+            ".git",
+            ".AppleDouble"
+        ] 
+	},
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+}

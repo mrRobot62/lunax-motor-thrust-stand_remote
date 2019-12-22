@@ -1,0 +1,66 @@
+{
+   "motors" : [
+     {
+       "thrust" : 0,
+       "thrust_min" : 0,
+       "thrust_max" : 0,
+       "thrust_avg" : 0,
+       "accel_raw_x" : 0,
+       "accel_raw_y" : 0,
+       "accel_raw_z" : 0,
+       "accel_x" : 0,
+       "accel_y" : 0,
+       "accel_z" : 0
+     },
+     {
+       "thrust" : 0,
+       "thrust_min" : 0,
+       "thrust_max" : 0,
+       "thrust_avg" : 0,
+       "accel_raw_x" : 0,
+       "accel_raw_y" : 0,
+       "accel_raw_z" : 0,
+       "accel_x" : 0,
+       "accel_y" : 0,
+       "accel_z" : 0
+     },
+     {
+       "thrust" : 0,
+       "thrust_min" : 0,
+       "thrust_max" : 0,
+       "thrust_avg" : 0,
+       "accel_raw_x" : 0,
+       "accel_raw_y" : 0,
+       "accel_raw_z" : 0,
+       "accel_x" : 0,
+       "accel_y" : 0,
+       "accel_z" : 0
+     },  
+     {
+       "thrust" : 0,
+       "thrust_min" : 0,
+       "thrust_max" : 0,
+       "thrust_avg" : 0,
+       "accel_raw_x" : 0,
+       "accel_raw_y" : 0,
+       "accel_raw_z" : 0,
+       "accel_x" : 0,
+       "accel_y" : 0,
+       "accel_z" : 0
+     }    
+     ],
+   "model" : [
+     {
+       "id" : 0,
+       "name" : "",
+       "pilot" : "",
+       "size" : "",
+       "weight" : 0,
+       "prop_size" : "",
+       "timestamp" : "",
+       "thrust_min" : 0,
+       "thrust_max" : 0,
+       "thrust_avg" : 0
+     }
+   ]
+ }

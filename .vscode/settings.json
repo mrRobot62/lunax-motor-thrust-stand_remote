@@ -1,0 +1,15 @@
+{
+    "sync-rsync.shell": "ssh fpvlunax",
+    "sync-rsync.remote": "/Volumes/Public/nodejs/lunax-motor-thrust-stand_remote",
+    "sync-rsync.local": "/Users/bernhardklein/local-workspace/Multicopter_Drones/LunaX_MotorThrust/lunax-motor-thrust-stand_remote",
+    "sync-rsync.onSave": true,
+    "sync-rsync.onSaveIndividual": true,
+    "sync-rsync.executableShell": "/bin/bash",
+    "sync-rsync.exclude": [
+        ".vscode",
+        "node_modules",
+        ".git",
+        ".gitignore"    ],
+    "sync-rsync.chmod": "D2775,F664",
+    "sync-rsync.useWSL": true
+}

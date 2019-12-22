@@ -1,0 +1,553 @@
+body {
+    padding-bottom:2em;
+}
+
+html, body {
+	height:100%;
+    overflow-y: visible; /* Show page scrollbar when packaged as a Chrome app */
+}
+
+a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+a.disabled {
+    pointer-events: none;
+    cursor: default;
+    color: #999;
+}
+
+/* Add an extended wide size to the page container for large monitors */
+@media (min-width: 1400px) {
+    .container.main-pane {
+        width:90%;
+    }
+}
+
+@media (max-width: 1140px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin: 7px -15px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .navbar-text {
+        float: none;
+        margin: 15px 0;
+    }
+    /* since 3.1.0 */
+    .navbar-collapse.collapse.in { 
+        display: block!important;
+    }
+    .collapsing {
+        overflow: hidden!important;
+    }
+
+    button.btn {
+        padding: 3px 6px;
+        font-size: 12px;
+    }
+
+}
+
+@media (min-width: 768px) {
+    .welcome-pane .panel-body {
+        min-height: 100px;
+    }
+
+    .dropdown-menu{
+        width:200px;
+    }
+ 
+}
+
+/*** toolbar expansion ***/
+
+@media (max-width: 675px) {
+    .container-fluid.main-pane,
+    html.has-log div.log-seek-bar {
+        padding-left:0;
+        padding-right:0;
+    }
+
+    .container-fluid.main-pane .graph-row {
+        width:100%;
+    }
+
+    div.log-graph-config{
+        padding: 1em 0;
+        line-height: 1.1;
+    }
+
+    div.log-graph-config h2 {
+        margin: 0;
+        display: none;
+    }
+
+    div.log-graph-config h3 {
+        margin-top: 0.25em;
+        margin-bottom: 0.25em;
+        font-size: 115%;
+    }
+
+    div.log-index div.form-control-static {
+        min-height: 0px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+
+    ul.video-top-controls {
+        height: 30px;
+        padding-top: 5px;
+    }
+    
+    .video-top-controls li {
+        margin-right: 1px;
+    }
+
+    div.graph-row {
+        top: 70px!important;
+    }
+
+    div.navbar-logo .log-filename {
+        font-size: 12px;
+    }
+
+    div.navbar-logo img {
+        height: 25px;
+    }
+
+    div.navbar-logo span {
+        top: 25px;
+        line-height: 1.5;
+    }
+
+    html.has-log button.log-jump-start,
+    html.has-log button.log-jump-back,
+    html.has-log button.log-jump-forward,
+    html.has-log button.log-jump-end {
+        display:none;
+    }
+}
+
+
+.welcome-pane, .main-pane {
+    position: fixed;
+    top: 15px;
+    bottom: 100px;
+    left: 0;
+    right: 0;
+    display: contents;
+}
+
+.welcome-pane .panel-body {
+    min-height: 100px;
+}
+
+.header-pane {
+    width: 100%;
+}
+.log-info {
+    max-width: 30em;
+}
+.log-info .form-group {
+    margin-bottom:10px;
+}
+
+#main-page {
+    position: static;
+    top: 60px;
+}
+
+ 
+html.has-craft #craftCanvas,
+html.has-analyser #analyserCanvas,
+html.has-sticks #stickCanvas {
+	display:block;
+}
+
+html.has-analyser-fullscreen.has-analyser .analyser input:not(.onlyFullScreenException) {
+	display:block;
+}
+
+
+html.has-table-overlay .log-field-values {
+    position: fixed;
+    top: 110px;
+    left: 15px;
+    width: calc(100% - 30px);
+    display:block;
+    padding: 9px;
+    font-size: small;
+    background-color: white;
+    border: black;
+    /*z-index: 10;*/
+    bottom: 80px;
+    overflow-y: auto;
+    border-style: solid;
+    border-width: 1px;
+}
+
+html:not(.has-config-overlay) .configuration-file,
+html:not(.has-marker) .marker-offset {
+    display:none;
+}
+
+.graph-legend-field-value {
+    float: right;
+}
+
+.graph-legend-field-settings {
+    font-size: 8px;
+    color:  black;
+    opacity: 0.8;
+    font-weight: bold;
+    padding-left: 0.3em;
+}
+
+.graph-legend-field.highlight > .graph-legend-field-settings {
+    opacity: 1.0;
+    box-shadow: 0px 0px 2px white;
+}
+
+.graph-legend-field > .glyphicon-equalizer {
+    float: right;
+    margin-left: 0.7em;
+}
+
+.override-button-group button {
+    width: 33%;
+    padding-bottom: 8px;
+}
+
+
+
+.jumbotron {
+    padding: 15px;
+}
+
+.hiddenElement {
+    display: none;
+}
+
+.loading-message {
+    padding-left: 30px;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+
+.btn-group .btn+.btn, .btn-group .btn+.btn-group, .btn-group .btn-group+.btn, .btn-group .btn-group+.btn-group {
+    margin-left: 0px;
+}
+
+
+
+#status-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    padding: 0 10px 0 10px;
+    border-top: 1px solid #7d7d79;
+    background-color: #bfbeb5;
+}
+
+html:not(.has-log) #status-bar {
+    display: none;
+}
+
+
+
+/***
+
+	IOS Style Checkboxes common code
+
+***/
+
+input[type="checkbox"].ios-switch { 
+	position: absolute;
+	opacity: 0;
+}
+
+/* Normal Track */
+input[type="checkbox"].ios-switch + div {
+	vertical-align: middle;
+	width: 40px;
+	height: 20px;
+	border: 1px solid rgba(0,0,0,.4);
+	border-radius: 999px;
+	background-color: rgba(0, 0, 0, 0.1);
+	-webkit-transition-duration: .4s;
+	-webkit-transition-property: background-color, box-shadow;
+	box-shadow: inset 0 0 0 0 rgba(0,0,0,0.4);
+	margin: 0 0 0 2.5em;
+	display: inherit;
+}
+
+/* Checked Track (Blue) */
+input[type="checkbox"].ios-switch:checked + div {
+	width: 40px;
+    background: #3b89ec 0 0;
+    border: 1px solid #0e62cd;
+	box-shadow: inset 0 0 0 10px rgba(59,137,259,1);
+}
+
+/* Tiny Track */
+input[type="checkbox"].tinyswitch.ios-switch + div {
+	width: 34px;	height: 18px;
+}
+
+/* Big Track */
+input[type="checkbox"].bigswitch.ios-switch + div {
+	width: 50px;	height: 25px;
+}
+
+/* Green Track */
+input[type="checkbox"].green.ios-switch:checked + div,
+html.isCF input[type="checkbox"].ios-switch:checked + div {
+	background-color: #00e359;
+	border: 1px solid rgba(0, 162, 63,1);
+	box-shadow: inset 0 0 0 10px rgba(0,227,89,1);
+}
+
+/* Orange Track */
+input[type="checkbox"].orange.ios-switch:checked + div, 
+html.isBF input[type="checkbox"].ios-switch:checked + div {
+	background-color: #FFC638;
+	border: 1px solid rgba(158, 100, 0, 1);
+	box-shadow: inset 0 0 0 10px rgba(224,168,0,1);
+}
+
+/* Normal Knob */
+input[type="checkbox"].ios-switch + div > div {
+	float: left;
+	width: 18px;
+	height: 18px;
+	border-radius: inherit;
+	background: #ffffff;
+	-webkit-transition-timing-function: cubic-bezier(.54,1.85,.5,1);
+	-webkit-transition-duration: 0.4s;
+	-webkit-transition-property: transform, background-color, box-shadow;
+	-moz-transition-timing-function: cubic-bezier(.54,1.85,.5,1);
+	-moz-transition-duration: 0.4s;
+	-moz-transition-property: transform, background-color;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(0, 0, 0, 0.4);
+	pointer-events: none;
+	margin-left: 0;
+}
+
+/* Checked Knob (Blue Style) */
+input[type="checkbox"].ios-switch:checked + div > div {
+	-webkit-transform: translate3d(20px, 0, 0);
+	-moz-transform: translate3d(20px, 0, 0);
+	background-color: #ffffff;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(8, 80, 172,1);
+}
+
+/* Tiny Knob */
+input[type="checkbox"].tinyswitch.ios-switch + div > div {
+	width: 16px; height: 16px;
+	margin-top: 1px;
+}
+
+/* Checked Tiny Knob (Blue Style) */
+input[type="checkbox"].tinyswitch.ios-switch:checked + div > div {
+	-webkit-transform: translate3d(16px, 0, 0);
+	-moz-transform: translate3d(16px, 0, 0);
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(8, 80, 172,1);
+}
+
+/* Big Knob */
+input[type="checkbox"].bigswitch.ios-switch + div > div {
+	width: 23px; height: 23px;
+	margin-top: 1px;
+}
+
+/* Checked Big Knob (Blue Style) */
+input[type="checkbox"].bigswitch.ios-switch:checked + div > div {
+	-webkit-transform: translate3d(25px, 0, 0);
+	-moz-transform: translate3d(16px, 0, 0);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(8, 80, 172,1);
+}
+
+/* Green Knob */
+input[type="checkbox"].green.ios-switch:checked + div > div ,
+html.isCF input[type="checkbox"].ios-switch:checked + div > div {
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(0, 162, 63,1);
+}
+
+/* Orange Knob */
+input[type="checkbox"].orange.ios-switch:checked + div > div ,
+html.isBF input[type="checkbox"].ios-switch:checked + div > div {
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(158, 100, 0,1);
+}
+
+/* Blue Knob */
+input[type="checkbox"].blue.ios-switch:checked + div > div ,
+html.isINAV input[type="checkbox"].ios-switch:checked + div > div {
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(8, 80, 172,1);
+}
+
+/*
+ Bootstrap Tooltip Overrides
+*/
+.tooltip {
+    --tooltip-color: #363636;
+}    
+.tooltip-inner {
+  background-color: var(--tooltip-color);
+}
+.tooltip.top .tooltip-arrow {
+  border-top-color: var(--tooltip-color);
+}
+.tooltip.top-left .tooltip-arrow {
+  border-top-color: var(--tooltip-color);
+}
+.tooltip.top-right .tooltip-arrow {
+  border-top-color: var(--tooltip-color);
+}
+.tooltip.right .tooltip-arrow {
+ border-right-color: var(--tooltip-color);
+}
+.tooltip.left .tooltip-arrow {
+  border-left-color: var(--tooltip-color);
+}
+.tooltip.bottom .tooltip-arrow {
+  border-bottom-color: var(--tooltip-color);
+}
+.tooltip.bottom-left .tooltip-arrow {
+  border-bottom-color: var(--tooltip-color);
+}
+.tooltip.bottom-right .tooltip-arrow {
+  border-bottom-color: var(--tooltip-color);
+}
+
+/
+/* changelog block */
+#changelog {
+    width: 700px;
+    height: 100%;
+    position: fixed;
+    right: -695px;
+    top: 0px;
+}
+
+#changelog .wrapper {
+    height: 100%;
+    padding: 0 0;
+    border-left: 5px solid #ffbb00;
+    overflow: hidden;
+    display: none;
+}
+
+#changelog .button {
+    transform: rotate(270deg);
+    top: 50px;
+    right: 665px;
+    position: absolute;
+    background: #ffbb00;
+    border-radius: 5px 5px 0 0;
+    border-bottom: none;
+    height: 30px;
+}
+
+#changelog .button a {
+    display: block;
+    padding: 5px 10px;
+    width: 90px;
+    text-align: center;
+    color: #000;
+}
+
+#changelog .title {
+    margin: 20px 0;
+    font-size: 16px;
+}
+
+html.log_open #changelog {
+    right: 0px;
+    background: white;
+}
+
+html.log_open #changelog .wrapper {
+    display: block;
+}
+
+/* changelog content */
+#changelog iframe {
+    border: 1px;
+    width: calc(100% - 20px);
+    border-style: solid;
+    height: calc(100% - 20px);
+    margin: 10px 10px 10px 10px;
+}
+
+
+dialog {
+    background-color: white;
+    padding: 1em;
+    height: auto;
+    margin: auto auto;
+    position: absolute;
+    width: 50%;
+    border-radius: 3px;
+    border: 1px solid silver;
+}
+
+dialog h3 {
+    display: block;
+    font-size: 1.17em;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+}
+
+.regular-button {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-right: 10px;
+    background-color: #ffbb00;
+    border-radius: 3px;
+    border: 1px solid #dba718;
+    color: #000;
+    font-family: 'open_sansbold', Arial;
+    font-size: 12px;
+    font-weight: bold;
+    text-shadow: 0px 1px rgba(255, 255, 255, 0.25);
+    display: inline-block;
+    cursor: pointer;
+    transition: all ease 0.2s;
+    padding: 0px;
+    padding-left: 9px;
+    padding-right: 9px;
+    line-height: 28px;
+}
+
+.col-c-sm-1 .col-sm-1 {
+    padding-right: 5px;
+    padding-left: 5px;
+}

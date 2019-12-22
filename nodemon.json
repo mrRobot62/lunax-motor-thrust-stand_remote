@@ -1,0 +1,7 @@
+{
+   "verbose":true,
+   "restartable":"rs",
+   "watch": ["app.js, views/, routes/, public/"],
+   "ext": "js, css, pug, json",
+   "delay": "3"
+ }

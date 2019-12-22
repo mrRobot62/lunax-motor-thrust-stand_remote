@@ -1,0 +1,49 @@
+                           .col
+                                p ClockPin
+                                +input("text","clockPinM1","","clockPinM1")
+                                +input("text","clockPinM2","","clockPinM2")
+                                +input("text","clockPinM3","","clockPinM3")
+                                +input("text","clockPinM4","","clockPinM4")
+                            .col
+                                p DataPin
+                                +input("text","dataPinM1","","dataPinM1")
+                                +input("text","dataPinM2","","dataPinM2")
+                                +input("text","dataPinM3","","dataPinM3")
+                                +input("text","dataPinM4","","dataPinM4")
+                            .col
+                                p Scale
+                                +input("text","txtScaleM1","","scaleMotorM1")
+                                +input("text","txtScaleM2","","scaleMotorM2")
+                                +input("text","txtScaleM3","","scaleMotorM3")
+                                +input("text","txtScaleM4","","scaleMotorM4")
+                            .col
+                                p Offset
+                                +input("text","txtOffsetM1","","offsetM1")
+                                +input("text","txtOffsetM2","","offsetM2")
+                                +input("text","txtOffsetM3","","offsetM3")
+                                +input("text","txtOffsetM4","","offsetM4")
+
+
+
+                                .col-3
+                                    +input("text","clockPinM1","m1","clockPinM1")
+                                    +input("text","clockPinM1","m1","clockPinM1")
+                                    +input("text","clockPinM1","m1","clockPinM1")
+                                    +input("text","clockPinM1","m1","clockPinM1")
+                                .col-3
+                                    +input("text","dataPinM1","m2","dataPinM1")
+                                    +input("text","dataPinM1","m2","dataPinM1")
+                                    +input("text","dataPinM1","m2","dataPinM1")
+                                    +input("text","dataPinM1","m2","dataPinM1")
+                                .col-3
+                                    +input("text","txtScaleM1","m3","scaleMotorM1")
+                                    +input("text","txtScaleM1","m3","scaleMotorM1")
+                                    +input("text","txtScaleM1","m3","scaleMotorM1")
+                                    +input("text","txtScaleM1","m3","scaleMotorM1")
+                                .col-3
+                                    +input("text","txtOffsetM1","m4","offsetM1")
+                                    +input("text","txtOffsetM1","m4","offsetM1")
+                                    +input("text","txtOffsetM1","m4","offsetM1")
+                                    +input("text","txtOffsetM1","m4","offsetM1")
+
+ 

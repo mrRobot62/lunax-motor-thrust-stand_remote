@@ -1,0 +1,126 @@
+extends ../_bootstrap
+
+
+append styles
+block body
+    - var clockPin = [{"id" : 1, "name": "5"},{"id" : 2, "name": "6"},{"id" : 3, "name": "14"},{"id" : 4, "name": "15"},{"id" : 5, "name": "20"},{"id" : 6, "name": "21"}];
+    - var dataPin = [{"id" : 1, "name": "5"}, {"id" : 2, "name": "6"}, {"id" : 3, "name": "14"}, {"id" : 4, "name": "15"}, {"id" : 5, "name": "20"},{"id" : 6, "name": "21"}];
+    .welcome-page
+        .container
+            .jumbotron
+                h2 #{title}
+        .container.row
+            .form-group
+                .col-sm-6
+                    .panel.panel-primary
+                        .panel-heading
+                            h4 Motor 4
+                        .panel-body
+                            .col-sm-6
+                                label.control-label.requiredField(for='optClockPin')
+                                    | Clock Pin
+                                select#propertyType.select.form-control.input-sm(form='addPin', name='optClockPin')
+                                    option(value='0' ) -- Select --
+                                        each val, idx in clockPin
+                                            option(value=idx selected = 1) #{clockPin[idx].name}
+                            .col-sm-6
+                                label.control-label.requiredField(for='optDataPin')
+                                    | Data Pin
+                                select#propertyType.select.form-control.input-sm(form='addPin', name='optDataPin')
+                                    option(value='0' ) -- Select --
+                                        each val, idx in dataPin
+                                            option(value=idx selected = 1) #{dataPin[idx].name}
+                            .col-sm-6
+                                label.control-label.requiredField(for='m4Scale')
+                                    | Scale Factor
+                                input#m4Scale.form-control.input-sm(type="text" name='m4Scale' placeholder="scale factor")
+                            .col-sm-6
+                                label.control-label.requiredField(for='m4Offset')
+                                    | Offset value
+                                input#m4Offset.form-control.input-sm(type="text" name='m4Offset' placeholder="offset value")
+                .col-sm-6
+                    .panel.panel-primary
+                        .panel-heading
+                            h4 Motor 1
+                        .panel-body
+                            .col-sm-6
+                                label.control-label.requiredField(for='optClockPin')
+                                    | Clock Pin
+                                select#propertyType.select.form-control.input-sm(form='addPin', name='optClockPin')
+                                    option(value='0' ) -- Select --
+                                        each val, idx in clockPin
+                                            option(value=idx selected = 1) #{clockPin[idx].name}
+                            .col-sm-6
+                                label.control-label.requiredField(for='optDataPin')
+                                    | Data Pin
+                                select#propertyType.select.form-control.input-sm(form='addPin', name='optDataPin')
+                                    option(value='0' ) -- Select --
+                                        each val, idx in dataPin
+                                            option(value=idx selected = 1) #{dataPin[idx].name}
+                            .col-sm-6
+                                label.control-label.requiredField(for='m1Scale')
+                                    | Scale Factor
+                                input#m4Scale.form-control.input-sm(type="text" name='m1Scale' placeholder="scale factor")
+                            .col-sm-6
+                                label.control-label.requiredField(for='m1Offset')
+                                    | Offset value
+                                input#m4Offset.form-control.input-sm(type="text" name='m1Offset' placeholder="offset value")
+                .col-sm-6
+                    .panel.panel-primary
+                        .panel-heading
+                            h4 Motor 3
+                        .panel-body
+                            .col-sm-6
+                                label.control-label.requiredField(for='optClockPin')
+                                    | Clock Pin
+                                select#propertyType.select.form-control.input-sm(form='addPin', name='optClockPin')
+                                    option(value='0' ) -- Select --
+                                        each val, idx in clockPin
+                                            option(value=idx selected = 1) #{clockPin[idx].name}
+                            .col-sm-6
+                                label.control-label.requiredField(for='optDataPin')
+                                    | Data Pin
+                                select#propertyType.select.form-control.input-sm(form='addPin', name='optDataPin')
+                                    option(value='0' ) -- Select --
+                                        each val, idx in dataPin
+                                            option(value=idx selected = 1) #{dataPin[idx].name}
+                            .col-sm-6
+                                label.control-label.requiredField(for='m3Scale')
+                                    | Scale Factor
+                                input#m4Scale.form-control.input-sm(type="text" name='m3Scale' placeholder="scale factor")
+                            .col-sm-6
+                                label.control-label.requiredField(for='m3Offset')
+                                    | Offset value
+                                input#m4Offset.form-control.input-sm(type="text" name='m3Offset' placeholder="offset value")
+                .col-sm-6
+                    .panel.panel-primary
+                        .panel-heading
+                            h4 Motor 2
+                        .panel-body
+                            .col-sm-6
+                                label.control-label.requiredField(for='optClockPin')
+                                    | Clock Pin
+                                select#propertyType.select.form-control.input-sm(form='addPin', name='optClockPin')
+                                    option(value='0' ) -- Select --
+                                        each val, idx in clockPin
+                                            option(value=idx selected = 1) #{clockPin[idx].name}
+                            .col-sm-6
+                                label.control-label.requiredField(for='optDataPin')
+                                    | Data Pin
+                                select#propertyType.select.form-control.input-sm(form='addPin', name='optDataPin')
+                                    option(value='0' ) -- Select --
+                                        each val, idx in dataPin
+                                            option(value=idx selected = 1) #{dataPin[idx].name}
+                            .col-sm-6
+                                label.control-label.requiredField(for='m2Scale')
+                                    | Scale Factor
+                                input#m4Scale.form-control.input-sm(type="text" name='m2Scale' placeholder="scale factor")
+                            .col-sm-6
+                                label.control-label.requiredField(for='m2Offset')
+                                    | Offset value
+                                input#m4Offset.form-control.input-sm(type="text" name='m2Offset' placeholder="offset value")
+
+                .col-sm-2
+                    button.btn.btn-primary.btn-block(type='submit' id="btnSubmit") Save
+                .col-sm-2
+                    button.btn.btn-warning.btn-block(type='button' id="btnReload") Reload

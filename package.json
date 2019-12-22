@@ -1,0 +1,29 @@
+{
+  "name": "lunax-motor-thrust-stand",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "devstart": "nodemon ./bin/www",
+    "serverstart": "DEBUG=express-locallibrary-tutorial:* npm run devstart"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "express-validator": "^6.3.0",
+    "http-errors": "~1.6.3",
+    "hx711": "^0.3.0",
+    "i2c-bus": "^5.1.0",
+    "ip": "^1.1.5",
+    "morgan": "~1.9.1",
+    "node-wiring-pi": "^0.0.3",
+    "oled-font-5x7": "^1.0.3",
+    "oled-i2c-bus": "^1.0.11",
+    "pngjs": "^3.4.0",
+    "pngparse": "^2.0.1",
+    "pug": "2.0.0-beta11",
+    "sqlite3": "^4.1.1",
+    "util": "^0.12.1"
+  }
+}
