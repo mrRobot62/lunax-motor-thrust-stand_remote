@@ -4,8 +4,8 @@ a FPV copter motor thrust stand from 3" to 6" copters
 Webbased application based on express webserver with a pug template engine
 
 *********************************************************
-** This current source is not ready to work            **
-** it's a alpha development version - with some basics **
+This current source is not ready to work           
+it's a alpha development version - with some basics
 *********************************************************
 
 
