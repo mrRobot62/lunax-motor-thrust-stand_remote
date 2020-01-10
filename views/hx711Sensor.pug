@@ -1,0 +1,76 @@
+extends ../_bootstrap
+
+//-
+    This mixin populate one configuration container for a motor with four
+    different value fields
+    2x option box to specify pins for the sensor
+    2x textfields for scaling and offset
+
+    Parameters:
+    constData: contain static values for this container
+    pinList : usable pins for this sensor
+    values: value list for this container
+        Format: {clkPin : <value>, dataPin: <value>, scale: <value>, offset:<value>}
+
+
+mixin configMotor(constData, pL, values)
+    .div.form-group
+        .col-sm-6
+            .panel.panel-primary.opacity95(id="hx711Sensor-Input")
+                .panel-heading
+                    .container
+                        .col-sm-3
+                            h4=constData.title
+                .panel-body
+                    .col-sm-6
+                        label.control-label.requiredField(for=constData.clkPin)
+                            | Clock Pin
+                        select#propertyType.select.form-control.input-sm(name=constData.clkPin, required=true)
+                            option(value='0' ) -- Select --
+                                each p in pL
+                                    option(value=p.id selected=(p.id === values.clkPinId)) GPIO(#{p.gpio})|wPI(#{p.wiringPi})
+                    .col-sm-6
+                        label.control-label.requiredField(for=constData.dataPin)
+                            | Data Pin
+                        select#propertyType.select.form-control.input-sm(name=constData.dataPin, required=true)
+                            option(value='0' ) -- Select --
+                                each p in pL
+                                    option(value=p.id selected=(p.id === values.dataPinId)) GPIO(#{p.gpio})|wPI(#{p.wiringPi})
+                    .col-sm-6
+                        label.control-label
+                            | Scale Factor
+                        input.form-control.input-sm(type="text" name=constData.scale placeholder="scale factor" value=values.scaling)
+                    .col-sm-6
+                        label.control-label
+                            | Offset value
+                        input.form-control.input-sm(type="text" name=constData.offset placeholder="offset value" value=values.offset)
+
+
+append styles
+block body
+
+    script(src="/js/jquery.min.js")
+
+    .welcome-page
+        .container
+            .jumbotron
+                h2 #{title}
+
+        .container(style='background-image: url(/images/motor_order/quadcopter_top.png); no-repeat; background-position: 55%,50%')
+            .row
+            form(method="POST" action="")
+                +configMotor(configData[3], pinList, valueList[3])
+                +configMotor(configData[0], pinList, valueList[0])
+                +configMotor(configData[2], pinList, valueList[2])
+                +configMotor(configData[1], pinList, valueList[1])
+                .col-sm-2
+                    button.btn.btn-danger.btn-block.opacity95(type='submit' value = "btnSubmit" name="hx711") Save Data
+//-
+                .col-sm-2
+                    button.btn.btn-warning.btn-block.opacity95(type='submit' value="btnReload" name="hx711") Reload Data
+                .col-sm-2
+                    button.btn.btn-success.btn-block.opacity95(type='submit' value="btnTest" name="hx711") Test Sensors
+                .col-sm-2
+                    button.btn.btn-primary.btn-block.opacity95(type='submit' value="btnReset" name="hx711") Reset Sensors
+
+

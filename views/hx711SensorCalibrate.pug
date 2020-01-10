@@ -1,0 +1,64 @@
+extends ../_bootstrap
+
+//-
+   motorId  : id of hx711 sensor (same numeration as for motors)
+   sensorData: dictionary
+      {id:<sensorid>, value:<value>, avg:<avg-value, max: <max_value>, min:<min_value>, scale:<scaling>, offset:<offset>}
+mixin calibrateSensor(data)
+   .col-sm-6
+      .panel.panel-primary.opacity95(id="hx711_Calibration")
+            .panel-body
+               table(id='M' + data.id)
+                  tbody
+                     tr
+                        //- 1st row contain only static data
+                        td 
+                           h2 M#{data.id} |
+                        td
+                           p MAX
+                           input(id="max_" + data.id, value=data.max, class="inputField")
+                        td
+                           p AVG
+                           input(id="avg_" + data.id, value=data.avg, class="inputField")
+                        td
+                           p MIN
+                           input(id="min_" + data.id, value=data.min, class="inputField")
+                     tr
+                        //- 2nd row contain only sensor data and a button
+                        td
+                        td
+                           p Values
+                        td
+                           input(value=(data.value),class='inputField')
+                        td 
+                           button(onClick=('onReset(' + data.id + ')')) Reset Sensor
+                     tr
+                        //- 3rd row contain 2 input fields and a save-button
+                        td
+                        td
+                           p Scale
+                           input(id="scale_" + data.id, value=(data.scale),class='inputField')
+                        td
+                           p Offset
+                           input(id="offset_" + data.id, value=(data.offset),class='inputField')
+                        td
+                           button(onClick=('onUpdate(' + data.id + ')')) Save config
+            
+append styles
+block body
+
+   script(src="/js/jquery.min.js")
+   script(src="/js/hx711Calibration.js")
+   - var data = [{id:1, value:990, avg:951, max:1157, min:932, scale:0, offset:0},{id:2, value:1030, avg:951, max:1157, min:932, scale:0, offset:0},{id:3, value:950, avg:951, max:1157, min:932, scale:0, offset:0},{id:4, value:1000, avg:951, max:1157, min:932, scale:0, offset:0}]
+
+   .welcome-page
+      .container
+         .jumbotron
+            h2 #{title}
+
+      .container(style='background-image: url(/images/motor_order/quadcopter_top.png); no-repeat; background-position: 55%,50%')
+         +calibrateSensor(data[3])
+         +calibrateSensor(data[0])
+         +calibrateSensor(data[2])
+         +calibrateSensor(data[1])
+

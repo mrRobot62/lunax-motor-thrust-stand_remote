@@ -1,4 +1,7 @@
 /**  */
+var debug = require('debug')('http')
+  , name = 'LunaX - MotorThrustStand';
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -9,13 +12,21 @@ const { body,validationResult } = require('express-validator');
 const { sanitizeBody } = require('express-validator');
 
 var indexRouter = require('./routes/index');
-//var usersRouter = require('./routes/users');
 var analyzeRouter = require('./routes/analyzeStepsRouter');
+var hx711SensorRouter = require('./routes/hx711SensorRouter');
+var hx711SensorCalibrateRouter = require('./routes/hx711SensorCalibrateRouter');
 var configRouter = require('./routes/configChoose');
 var changelogRouter = require('./routes/changelog');
+//var realtimeDataRouter = require('./routes/realtimeDataRouter');
 var ajax = require('./routes/ajax');
+var favicon = require('serve-favicon');
+
+var HX711Setup = require('./models/analyze/hx711Sensor');
 
 var app = express();
+
+var WebSocket = require('ws');
+const wss = new WebSocket.Server({port:3002});
 
 
 // view engine setup
@@ -31,9 +42,24 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 //app.use('/users', usersRouter);
 app.use('/analyzeSteps', analyzeRouter);
+app.use('/hx711Sensor', hx711SensorRouter);
+app.use('/hx711SensorCalibrate', hx711SensorCalibrateRouter);
 app.use('/configChoose', configRouter);
 app.use('/changelog', changelogRouter);
 app.post('/ajax', ajax);
+
+
+app.use(favicon(path.join(__dirname,'public','images','favicon.ico')));
+
+//
+//if (HX711Setup.CreateSensorObjects()
+
+//
+
+
+//------------------------------------------------
+// Express handling
+//------------------------------------------------
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -11,6 +11,18 @@ block body
                 .col-sm-4
                     .panel.panel-primary
                         .panel-heading 
+                            h4 Configure HX711 sensor
+                        .panel-body
+                            .container
+                                p Define pins for all four sensors
+                                .btn.btn-default
+                                    a(href="hx711Sensor", type="btn is-primary") Config
+                                .btn.btn-warning
+                                    a(href="hx711SensorCalibrate", type="btn") Calibration
+
+                .col-sm-4
+                    .panel.panel-primary
+                        .panel-heading 
                             h4 Configure Analyze Steps
                         .panel-body
                             .container
@@ -62,13 +74,3 @@ block body
                                 p Define views for analyze steps 
                                 .btn.btn-default
                                     a(href="", type="btn is-primary") Config
-                .col-sm-4
-                    .panel.panel-primary
-                        .panel-heading 
-                            h4 Configure HX711 sensor
-                        .panel-body
-                            .container
-                                p Define pins 
-                                .btn.btn-default
-                                    a(href="hx711Controller", type="btn is-primary") Config
-

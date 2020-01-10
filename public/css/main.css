@@ -551,3 +551,33 @@ dialog h3 {
     padding-right: 5px;
     padding-left: 5px;
 }
+
+.container-bgImage .container:before {
+    background-image: url(/public/images/motor_order/quadcopter_top.jpg);
+}
+
+.panel-primary-opac90 {
+
+}
+
+.panel-heading-opac90 .panel-heading {
+    background-color: #337ab7e6;
+}
+
+.panel-body-opac90 .panel-body {
+    color: #ffffffe6
+}
+
+.opacity20 {
+    opacity: 0.2
+}
+
+.opacity75 {
+    opacity: 0.75
+}
+.opacity90 {
+    opacity: 0.9
+}
+.opacity95 {
+    opacity: 0.95
+}
